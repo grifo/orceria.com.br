@@ -1,3 +1,5 @@
+@import "nib"
+
 // http://dev.w3.org/csswg/css-device-adapt/#the-atviewport-rule
 // http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport
 @viewport
@@ -12,4 +14,62 @@
     vhidden()
 
 // -. .-. CORE .-. .-.
+
+body
+    margin: 0 auto
+    font: 1em/1.5 $font-family
+    color: darken($softblue, 20)
+
+header
+    height: 340px
+    padding-top: 30px
+    background: linear-gradient(top, rgba(white, .1), rgba(black, .1)), url("../images/$.jpg") white center bottom no-repeat
+    box-shadow: inset 0 -2px 5px rgba(black, .04)
+
+.title
+    font-size: 2.5em
+    font-weight: 600
+    color: $orange
+    letter-spacing: -.075em
+    text-transform: uppercase
+    margin-bottom: 10px
+    // background: linear-gradient(top, rgba(black, 0) 94%, rgba(black, .05))
+    // text-shadow: 2px 2px 0 rgba($softblue, .3)
+
+.logo
+    width: 300px
+    margin: 0 auto
+    h1
+        hide-text()
+        width: 270px
+        height: 80px
+        margin: 0 auto
+        background: url("../images/logo.png")
+    p
+        text-align: center
+        font-size: 1.25em
+        line-height: 1.2
+        color: darken($softblue, 15)
+
+section
+    width: 960px
+    margin: 60px auto
+    overflow: hidden
+
+
+.about
+    h1
+        vhidden()
+    .container
+        width: 50%
+        box-sizing: border-box
+        float: left
+        padding-right: 10%
+        + .container
+            padding-right: 10%
+            padding-left: 0
+
+
+
+
 
