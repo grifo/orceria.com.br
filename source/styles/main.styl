@@ -18,12 +18,13 @@
 body
     margin: 0 auto
     font: 1em/1.5 $font-family
-    color: darken($softblue, 20)
+    color: #666
+    background: darken(white, 1)
 
 header
-    height: 340px
-    padding-top: 30px
-    background: linear-gradient(top, rgba(white, .1), rgba(black, .1)), url("../images/$.jpg") white center bottom no-repeat
+    height: 320px
+    padding-top: 40px
+    background: linear-gradient(top, rgba(white, .1), rgba(black, .10)), url("../images/$.jpg") white center 120px no-repeat
     box-shadow: inset 0 -2px 5px rgba(black, .04)
 
 .title
@@ -33,43 +34,61 @@ header
     letter-spacing: -.075em
     text-transform: uppercase
     margin-bottom: 10px
-    // background: linear-gradient(top, rgba(black, 0) 94%, rgba(black, .05))
-    // text-shadow: 2px 2px 0 rgba($softblue, .3)
+    &.provider
+        color: $blue
 
-.logo
-    width: 300px
-    margin: 0 auto
-    h1
-        hide-text()
-        width: 270px
-        height: 80px
-        margin: 0 auto
-        background: url("../images/logo.png")
-    p
+header
+    position: relative
+    .logo
+        replace-text(url("../images/logo.png"))
+        width: 280px
+        height: 70px
+        margin: 0 auto 5px auto
+    .slogon
         text-align: center
         font-size: 1.25em
-        line-height: 1.2
-        color: darken($softblue, 15)
+        line-height: 80px
+        width: 550px
+        margin-left: -275px
+        absolute: bottom -40px left 50%
+        border-radius: 7px
+        background: white
+        box-shadow: 1px 1px 2px rgba(black, .3)
 
-section
+section, .wrapper
     width: 960px
-    margin: 60px auto
+    margin: 0 auto
     overflow: hidden
 
-
-.about
+section
     h1
         vhidden()
+
+.about
+    padding-top: 30px
     .container
         width: 50%
         box-sizing: border-box
         float: left
-        padding-right: 10%
+        padding-right: 5%
+        border-radius: 8px
         + .container
-            padding-right: 10%
-            padding-left: 0
+            padding-left: 5%
+            padding-right: 0
+
+.how-work
+    padding-bottom: 50px
 
 
-
-
-
+footer
+    line-height: 100px
+    text-align: center
+    box-shadow: inset 0 2px 5px rgba(black, .04)
+    font-size: .9em
+    background: linear-gradient(top, darken(white, 10), darken(white, 15))
+    .grifo
+        replace-text(url("../images/crown.png"))
+        float: right
+        width: 28px
+        height: 20px
+        margin-top: 40px

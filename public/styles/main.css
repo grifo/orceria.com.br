@@ -55,22 +55,138 @@ input,select{vertical-align:middle;}
 .clearfix:after { clear: both; }
 /* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
 .clearfix { zoom: 1; }
-#skiplinks{position:absolute;left:-9999px}
-body{margin:0 auto;font:1em/1.5 "Source Sans Pro",sans-serif;color:#486971}
-header{height:340px;padding-top:30px;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255,255,255,0.1)), color-stop(1, rgba(0,0,0,0.1))),url("../images/$.jpg") #fff center bottom no-repeat;background:-webkit-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%),url("../images/$.jpg") #fff center bottom no-repeat;background:-moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%),url("../images/$.jpg") #fff center bottom no-repeat;background:-o-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%),url("../images/$.jpg") #fff center bottom no-repeat;background:-ms-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%),url("../images/$.jpg") #fff center bottom no-repeat;background:linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%),url("../images/$.jpg") #fff center bottom no-repeat;-webkit-box-shadow:inset 0 -2px 5px rgba(0,0,0,0.04);box-shadow:inset 0 -2px 5px rgba(0,0,0,0.04)}
-.title{font-size:2.5em;font-weight:600;color:#f60;letter-spacing:-.075em;text-transform:uppercase;margin-bottom:10px}
-.logo{width:300px;margin:0 auto;}
-.logo h1{text-indent:100%;white-space:nowrap;overflow:hidden;width:270px;height:80px;margin:0 auto;background:url("../images/logo.png")}
-.logo p{text-align:center;font-size:1.25em;line-height:1.2;color:#527880}
-section{width:960px;margin:60px auto;overflow:hidden}
-.about h1{position:absolute;left:-9999px}
-.about .container{width:50%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;float:left;padding-right:10%;}
-.about .container + .container{padding-right:10%;padding-left:0}
-@-moz-viewport{width:device-width}
-@-webkit-viewport{width:device-width}
-@-o-viewport{width:device-width}
-@-ms-viewport{width:device-width}
-@viewport{width:device-width}
+#skiplinks {
+  position: absolute;
+  left: -9999px;
+}
+body {
+  margin: 0 auto;
+  font: 1em/1.5 "Source Sans Pro", sans-serif;
+  color: #666;
+  background: #fcfcfc;
+}
+header {
+  height: 320px;
+  padding-top: 40px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255,255,255,0.1)), color-stop(1, rgba(0,0,0,0.1))), url("../images/$.jpg") #fff center 120px no-repeat;
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%), url("../images/$.jpg") #fff center 120px no-repeat;
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%), url("../images/$.jpg") #fff center 120px no-repeat;
+  background: -o-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%), url("../images/$.jpg") #fff center 120px no-repeat;
+  background: -ms-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%), url("../images/$.jpg") #fff center 120px no-repeat;
+  background: linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%), url("../images/$.jpg") #fff center 120px no-repeat;
+  -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,0.04);
+  box-shadow: inset 0 -2px 5px rgba(0,0,0,0.04);
+}
+.title {
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #f60;
+  letter-spacing: -0.075em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.title.provider {
+  color: #5c8690;
+}
+header {
+  position: relative;
+}
+header .logo {
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 280px;
+  height: 70px;
+  margin: 0 auto 5px auto;
+}
+header .slogon {
+  text-align: center;
+  font-size: 1.25em;
+  line-height: 80px;
+  width: 550px;
+  margin-left: -275px;
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  background: #fff;
+  -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+section,
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+section h1 {
+  position: absolute;
+  left: -9999px;
+}
+.about {
+  padding-top: 30px;
+}
+.about .container {
+  width: 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  padding-right: 5%;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+.about .container + .container {
+  padding-left: 5%;
+  padding-right: 0;
+}
+.how-work {
+  padding-bottom: 50px;
+}
+footer {
+  line-height: 100px;
+  text-align: center;
+  -webkit-box-shadow: inset 0 2px 5px rgba(0,0,0,0.04);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.04);
+  font-size: 0.9em;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e6e6e6), color-stop(1, #d9d9d9));
+  background: -webkit-linear-gradient(top, #e6e6e6 0%, #d9d9d9 100%);
+  background: -moz-linear-gradient(top, #e6e6e6 0%, #d9d9d9 100%);
+  background: -o-linear-gradient(top, #e6e6e6 0%, #d9d9d9 100%);
+  background: -ms-linear-gradient(top, #e6e6e6 0%, #d9d9d9 100%);
+  background: linear-gradient(top, #e6e6e6 0%, #d9d9d9 100%);
+}
+footer .grifo {
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url("../images/crown.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  float: right;
+  width: 28px;
+  height: 20px;
+  margin-top: 40px;
+}
+@-moz-viewport {
+  width: device-width;
+}
+@-webkit-viewport {
+  width: device-width;
+}
+@-o-viewport {
+  width: device-width;
+}
+@-ms-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
 
 @media print {
     * { background: transparent !important; color: black !important; text-shadow: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>Orçaria</title>
+    <title>Orceria</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     
@@ -35,46 +35,68 @@
     <![endif]-->
 
     <div id="skiplinks">
-        <a href="#nav">Pular para a navegação</a>
         <a href="#content">Pular para o conteúdo</a>
     </div>
     
     <header role="banner">
-        <hgroup class="logo">
-            <h1>Orçaria</h1>
-            <p>Uma nova maneira de orçar e realizar seus projetos</p>
+        <hgroup>
+            <h1 class="logo">Orçaria</h1>
+            <p class="slogon">Uma nova maneira de orçar e realizar seus projetos</p>
         </hgroup>
     </header>
+
+    <section class="apply">
+        <h1>Cadastre-se</h1>
+        <form action="">
+            <fieldset>
+                <legend>Dados pessoais</legend>
+                <ol>
+                    <li>
+                        <label for="signin-email">Seu e-mail</label>
+                        <input id="signin-email" name="email" type="text" placeholder="seu endereço de e-mail">
+                    </li>
+                </ol>
+            </fieldset>
+            <fieldset>
+                <legend>Informações complementares</legend>
+                <ol>
+                    <li>
+                        <label for="signin-name">Seu nome</label>
+                        <input id="signin-name" name="name" type="text" placeholder="nome">
+                    </li>
+                    <li>
+                        <label for="signin-phone">Seu telefone</label>
+                        <input id="signin-phone" name="phone" type="text" placeholder="telefone">
+                    </li>
+                </ol>
+            </fieldset>
+            <button type="submit">enviar</button>
+        </form>
+    </section>
     
-    <section class="about">
+    <section class="about" id="content">
         <h1>Sobre</h1>
         <div class="container">
-            <h2 class="title">Sou comprador</h2>
-            <p>Difícil de encontrar o profissional ideal para seu <b>projeto</b>? Aqui você encontra os <b>melhores profissionais</b> para executar com excelência os mais variados projetos.</p>
+            <h2 class="title client">Sou cliente</h2>
+            <p>Sabemos o quanto é difícil encontrar profissionais ideais para seus <b>projetos</b>. Por isso viabilizamos que você conheça os <b>melhores profissionais</b> para executar com excelência os mais variados projetos.</p>
         </div>
         <div class="container">
-            <h2 class="title">Sou fornecedor</h2>
-            <p>Aumente sua carteira de <b>clientes</b>, expanda seu negócio e ainda faça parte de projetos <b>legais e releventes</b>. Este é o lugar certo <b>para você</b>.</p>
+            <h2 class="title provider">Sou fornecedor</h2>
+            <p>Aumente sua carteira de <b>clientes</b>, expanda seu negócio e ainda faça parte de projetos <b>legais e releventes</b>. Este é o lugar certo <b>para você</b> fechar os melhores negócios.</p>
         </div>
     </section>
-    
+
     <section class="how-work">
-        <h1 class="title">Como funciona</h1>
-    
-    
+        <h1>Como funciona</h1>
+        <img src="images/flow.png" alt="Fluxo de funcionamento do produto">
     </section>
     
-    <section class="apply">
-        <h1 class="title">Como funciona</h1>
-    
-    
-    </section>
-    
-    
-    
-    
-    
-    <div id="content"></div>
+    <footer>
+        <div class="wrapper">
+            © 2012 - Grifo. Todos os direitos reservados
+            <a class="grifo" href="http://gri.fo" rel="external" title="Grifo">Grifo</a>
+        </div>
+    </footer>
 
     <script src="scripts/main.js"></script>
     
