@@ -28,13 +28,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `inscriptions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `personorentity` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `phone` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `personorentity` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
   `perfil` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
   `field` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `impression` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `expectations` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
   `suggestions` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY (`id`)
