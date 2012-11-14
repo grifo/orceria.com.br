@@ -45,68 +45,89 @@
         </hgroup>
     </header>
 
-    <section class="apply">
+    <section class="signin">
         <h1>Cadastre-se</h1>
-        <form action="request.php" method="post">
-            <fieldset>
-                <legend>Dados pessoais</legend>
+        <form action="request.php" class="first" method="post">
+            <fieldset class="first-section">
+                <legend>Preencha com seu e-mail e<br> fique sabendo do lançamento</legend>
                 <ol>
                     <li>
                         <label for="signin-email">Seu e-mail</label>
-                        <input id="signin-email" name="email" type="text" placeholder="seu endereço de e-mail">
+                        <input id="signin-email" name="email" type="text">
                     </li>
                 </ol>
             </fieldset>
-            <fieldset>
-                <legend>Informações complementares</legend>
+            
+            <fieldset class="second-section">
+                <legend>Conhecer você nos ajudará a fazer um produto melhor</legend>
                 <ol>
                     <li>
-                        <label for="sigin-name">Nome<label>
-                        <input id="sigin-name" name="name" type="text" placeholder="name">
+                        <label for="sigin-name">Seu nome<label>
+                        <input id="sigin-name" name="name" type="text">
                     </li>
-                    <li>
+                    <li class="phone">
                         <label for="signin-phone">Seu telefone</label>
-                        <input id="signin-phone" name="phone" type="text" placeholder="telefone">
+                        <input id="signin-phone" name="phone" type="text">
                     </li>
                     <li>
-                        <label for="sigin-personorentity-person">
-                            <input id="sigin-personorentity-person" name="personorentity" type="radio" value="Pessoa Física" />
-                            Pessoa Física
-                        </label>
-                        <label for="sigin-personorentity-entity">
-                            <input id="sigin-personorentity-entity" name="personorentity" type="radio" value="Pessoa Jurídica" />
-                            Pessoa Jurídica
-                        </label>
+                        <fieldset class="selector">
+                            <legend>Você é</legend>
+                            <ol>
+                                <li>
+                                    <label>
+                                        <input name="personorentity" type="radio" value="Pessoa Física">
+                                        Pessoa Física
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input name="personorentity" type="radio" value="Pessoa Jurídica">
+                                        Pessoa Jurídica
+                                    </label>
+                                </li>
+                            </ol>
+                        </fieldset>                        
                     </li>
                     <li>
-                        <label for="sigin-perfil-client">
-                            <input id="sigin-perfil-client" name="perfil" type="radio" value="Cliente">
-                            Cliente
-                        <label>
-                        <label for="sigin-perfil-provider">
-                            <input id="sigin-perfil-provider" name="perfil" type="radio" value="Fornecedor">
-                            Fornecedor
-                        <label>
-                        <label for="sigin-perfil-both">
-                            <input id="sigin-perfil-both" name="perfil" type="radio" value="Ambos">
-                            Ambos
-                        <label>
+                        <fieldset class="selector">
+                            <legend>Qual o seu perfil</legend>
+                            <ol>
+                                <li>
+                                    <label>
+                                        <input name="perfil" type="radio" value="Cliente">
+                                        Cliente
+                                    <label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input name="perfil" type="radio" value="Fornecedor">
+                                        Fornecedor
+                                    <label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input name="perfil" type="radio" value="Ambos">
+                                        Ambos
+                                    <label>
+                                </li>
+                            </ol>
+                        </fieldset>
                     </li>
                     <li>
                         <label for="sigin-field">Área de Atuação<label>
-                        <input id="sigin-field" name="field" type="text" placeholder="area de atuação">
+                        <input id="sigin-field" name="field" type="text">
                     </li>
                     <li>
                         <label for="sigin-expectations">Expectativas sobre a ferramenta<label>
-                        <input id="sigin-expectations" name="expectations" type="text" placeholder="expectativas">
+                        <input id="sigin-expectations" name="expectations" type="text">
                     </li>
                     <li>
                         <label for="sigin-suggestions">Sugestões sobre a ferramenta<label>
-                        <input id="sigin-suggestions" name="suggestions" type="text" placeholder="sugestões">
+                        <input id="sigin-suggestions" name="suggestions" type="text">
                     </li>
                 </ol>
             </fieldset>
-            <button type="submit">enviar</button>
+            <button id="send-button" type="submit">enviar</button>
         </form>
     </section>
     
