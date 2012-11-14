@@ -47,7 +47,7 @@
 
     <section class="apply">
         <h1>Cadastre-se</h1>
-        <form action="">
+        <form action="request.php" method="post">
             <fieldset>
                 <legend>Dados pessoais</legend>
                 <ol>
@@ -61,12 +61,48 @@
                 <legend>Informações complementares</legend>
                 <ol>
                     <li>
-                        <label for="signin-name">Seu nome</label>
-                        <input id="signin-name" name="name" type="text" placeholder="nome">
+                        <label for="sigin-name">Nome<label>
+                        <input id="sigin-name" name="name" type="text" placeholder="name">
                     </li>
                     <li>
                         <label for="signin-phone">Seu telefone</label>
                         <input id="signin-phone" name="phone" type="text" placeholder="telefone">
+                    </li>
+                    <li>
+                        <label for="sigin-personorentity-person">
+                            <input id="sigin-personorentity-person" name="personorentity" type="radio" value="Pessoa Física" />
+                            Pessoa Física
+                        </label>
+                        <label for="sigin-personorentity-entity">
+                            <input id="sigin-personorentity-entity" name="personorentity" type="radio" value="Pessoa Jurídica" />
+                            Pessoa Jurídica
+                        </label>
+                    </li>
+                    <li>
+                        <label for="sigin-perfil-client">
+                            <input id="sigin-perfil-client" name="perfil" type="radio" value="Cliente">
+                            Cliente
+                        <label>
+                        <label for="sigin-perfil-provider">
+                            <input id="sigin-perfil-provider" name="perfil" type="radio" value="Fornecedor">
+                            Fornecedor
+                        <label>
+                        <label for="sigin-perfil-both">
+                            <input id="sigin-perfil-both" name="perfil" type="radio" value="Ambos">
+                            Ambos
+                        <label>
+                    </li>
+                    <li>
+                        <label for="sigin-field">Área de Atuação<label>
+                        <input id="sigin-field" name="field" type="text" placeholder="area de atuação">
+                    </li>
+                    <li>
+                        <label for="sigin-expectations">Expectativas sobre a ferramenta<label>
+                        <input id="sigin-expectations" name="expectations" type="text" placeholder="expectativas">
+                    </li>
+                    <li>
+                        <label for="sigin-suggestions">Sugestões sobre a ferramenta<label>
+                        <input id="sigin-suggestions" name="suggestions" type="text" placeholder="sugestões">
                     </li>
                 </ol>
             </fieldset>
