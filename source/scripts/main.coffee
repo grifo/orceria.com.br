@@ -1,3 +1,16 @@
+CORSRequest = (method, url) ->
+    xhr = new XMLHttpRequest
+
+    if XDomainRequest?
+        xhr = new XDomainRequest
+        xhr.open method, url
+    else
+        xhr.open method, url, true
+
+    xhr.send()
+
+
+
 class Landing
     constructor: ->
         @form = $ 'form'
@@ -14,13 +27,16 @@ class Landing
 
     send: ->
         return if not this.validate()
-        $.ajax
-            url: 'http://catapult.gri.fo/orceria.com.br.php'
-            type: 'html'
-            method: 'post'
-            crossOrigin: true
-            withCredentials: true
-            data: $('form input').serialize(type: 'map')
+
+        CORSRequest 'post', 'http://catapult.gri.fo/orceria.com.br.php'
+
+        # $.ajax
+        #     url: 'http://catapult.gri.fo/orceria.com.br.php'
+        #     type: 'html'
+        #     method: 'post'
+        #     crossOrigin: true
+        #     withCredentials: true
+        #     data: $('form input').serialize(type: 'map')
         this.nextStage()
 
     message: ->
