@@ -102,6 +102,8 @@ input[type=text]
 
     form
         width: 400px
+        overflow: hidden
+        max-height: 130px
         margin: 0 auto
         position: relative
         ol li
@@ -123,6 +125,13 @@ input[type=text]
     input[type=text]
         width: 400px
 
+    .message
+        background: lighten(green, 60)
+        padding: 10px
+        margin-bottom: 20px
+        text-align: center
+
+
     // FIRST
     form.first
         .second-section
@@ -140,6 +149,8 @@ input[type=text]
 
     // SECOND
     form.second
+        transition: .4s all ease-out
+        max-height: 1000px
         .first-section 
             vhidden()
         label
@@ -152,6 +163,10 @@ input[type=text]
             margin-top: 10px
             line-height: 38px
 
+    // FINAL
+    form.final
+        .first-section, .second-section, button
+            vhidden()
 
 
 .about
