@@ -9,7 +9,7 @@ task 'dev', ->
 
 task 'build:scripts', ->
     bundle [
-        'source/scripts/ender.min.js'
+        'source/scripts/ender.js'
         'source/scripts/main.coffee'
     ], 'public/scripts/main.js'
 
@@ -25,8 +25,9 @@ task 'build', ->
     # https://github.com/ender-js/Ender/wiki/Ender-package-list
     (require 'ender').build [
         'bonzo'     # DOM utility
-        'bean'      # event manager
         'domready'  # DOM ready
+        'reqwest'   # ajax!
+        'bean'      # event manager
     ], output: 'source/scripts/ender', -> 
         invoke 'build:scripts'
 
