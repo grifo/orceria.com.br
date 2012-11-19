@@ -61,7 +61,6 @@ section, .wrapper
         color: $blue
 
 input[type=text], button
-    line-height: 20px
     background: white
     border: 1px solid #CCC
     box-shadow: inset 0 1px 1px rgba(black, .1)
@@ -81,7 +80,7 @@ button
     border-color: rgba(black, 0.15) rgba(black, 0.15) rgba(black, 0.25)
     background: linear-gradient(top, darken(white, 2), darken(white, 8))
     cursor: pointer
-    line-height: 44px
+    height: 44px
     padding-left: 16px
     padding-right: 16px
     &:hover
@@ -91,6 +90,7 @@ button
 
 
 input[type=text]
+    height: 34px
     &:focus
         transition: .1s all ease-out
         border-color:  #AAA
@@ -103,7 +103,7 @@ input[type=text]
     form
         width: 400px
         overflow: hidden
-        max-height: 130px
+        max-height: 140px
         margin: 0 auto
         position: relative
         ol li
@@ -112,6 +112,7 @@ input[type=text]
     legend
         text-align: center
         font-size: 1.2em
+        width: 100% // ff
         color: #999
         line-height: 1.2
         margin-bottom: 30px
@@ -138,12 +139,15 @@ input[type=text]
             vhidden()
         label
             vhidden()
+        input, button
+            height: 50px
         input
             font-size: 1.3em
             padding-left: 10px
-            line-height: 44px
             &.invalid
                 background: lighten(red, 48)
+        li
+            margin-bottom: 0
         button
             absolute: right bottom
 
