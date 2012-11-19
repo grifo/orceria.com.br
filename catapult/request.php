@@ -1,26 +1,32 @@
 <?php
 
-	$host = "localhost";
-	$user = "root";
+	$host = "";
+	$user = "";
 	$password = "";
-	$database = "orcaria";
+	$database = "";
+	$table = "";
 	$isAjax = false;
 
-	if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) 
+	if (
+		isset($_SERVER['HTTP_X_REQUESTED_WITH']) 
 		&& !empty($_SERVER['HTTP_X_REQUESTED_WITH']) 
-		&& strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+		&& strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'
+	) 
+	{
 		$isAjax = true;
 	}
-	echo 'Is Ajax? '; echo $isAjax ? 'sim' : 'não' ; echo '<br>';
+	echo 'Is Ajax? ';
+	echo $isAjax ? 'sim' : 'não' ;
+	echo '<br>';
 
 
-	$con = mysql_connect($host,$user,$password);
-	mysql_set_charset("UTF8",$con);
+	$con = mysql_connect($host, $user, $password);
+	mysql_set_charset("UTF8", $con);
 
 	if (!$con)
-  {
-  	die('Could not connect: ' . mysql_error());
-  }
+	{
+		die('Could not connect: ' . mysql_error());
+	}
 
 	mysql_select_db($database, $con);
 
@@ -66,10 +72,11 @@
 	echo "<br>";
 
 	//busca os dados atuais e sobreescreve se estiverem no form
-	$result = mysql_query("SELECT * FROM inscriptions WHERE email = '$email'");
+	$result = mysql_query("SELECT * FROM `$table` WHERE email = '$email'");
 	$jaExiste = false;
 
-	while ( $row = mysql_fetch_array($result) ) {
+	while ($row = mysql_fetch_array($result))
+	{
 		$jaExiste = true;
 		$name = !empty($name) ? $name : $row['name'];
 		$phone = !empty($phone) ? $phone : $row['phone']; 
@@ -81,35 +88,37 @@
 	}
 
 	echo "Atualizando com os dados do banco <br>";
-	echo $jaExiste; echo "<br>";
-	echo $email; echo "<br>";
-	echo $name; echo "<br>";
-	echo $phone; echo "<br>";
-	echo $perfil; echo "<br>";
-	echo $field; echo "<br>";
-	echo $expectations; echo "<br>";
-	echo $personOrEntity; echo "<br>";
-	echo $suggestions; echo "<br>";
+	echo $jaExiste."<br>";
+	echo $email."<br>";
+	echo $name."<br>";
+	echo $phone."<br>";
+	echo $perfil."<br>";
+	echo $field."<br>";
+	echo $expectations."<br>";
+	echo $personOrEntity."<br>";
+	echo $suggestions."<br>";
 	echo "<br>";
 
-	$sql;
-
-	if ( $jaExiste ) {
-		$sql="UPDATE inscriptions
-			SET name = '$name', personorentity = '$personOrEntity', phone = '$phone', perfil = '$perfil', field = '$field', expectations = '$expectations', suggestions = '$suggestions', date = now()
+	if ($jaExiste)
+	{
+		$sql = "UPDATE `$table`
+			SET name = '$name', personorentity = '$personOrEntity', phone = '$phone', perfil = '$perfil', field = '$field', expectations = '$expectations', suggestions = '$suggestions', date = NOW()
 			WHERE email = '$email'";	
-	} else {
-		$sql="INSERT INTO inscriptions (email, name, personorentity, phone, perfil, field, expectations, suggestions, date) 
-			VALUES ('$email', '$name', '$personOrEntity', '$phone', '$perfil', '$field', '$expectations', '$suggestions', now())";
+	}
+	else
+	{
+		$sql = "INSERT INTO `$table` (email, name, personorentity, phone, perfil, field, expectations, suggestions, date) 
+			VALUES ('$email', '$name', '$personOrEntity', '$phone', '$perfil', '$field', '$expectations', '$suggestions', NOW())";
 	}
 
 	echo "sql:<br>";
-	echo $sql; echo "<br>";
+	echo $sql;
+	echo "<br>";
 
-	if (!mysql_query($sql,$con))
-  {
-	  die('Error: ' . mysql_error());
-  }
+	if (!mysql_query($sql, $con))
+	{
+		die('Error: ' . mysql_error());
+	}
 
 	mysql_close($con);
 
