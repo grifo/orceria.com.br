@@ -15,9 +15,10 @@ class Landing
     send: ->
         return if not this.validate()
         $.ajax
-            url: 'catapult.gri.fo/orceria.com.br.php'
+            url: 'http://catapult.gri.fo/orceria.com.br.php'
             method: 'post'
             type: 'html'
+            crossOrigin: true
             data: $('form input').serialize(type: 'map')
         this.nextStage()
 

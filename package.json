@@ -15,7 +15,7 @@
     ],
     "dependencies": {
         "coffee-script": "1.4.0",
-        "flour": "git://github.com/jcemer/cake-flour",
+        "flour": "0.4.0",
         "ender": "0.8.11",
         "nib": "0.8.2",
         "stylus": "git://github.com/grifo/stylus",
