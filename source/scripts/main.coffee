@@ -15,7 +15,7 @@ class Landing
     send: ->
         return if not this.validate()
         $.ajax
-            url: '../catapult/request-fake.php'
+            url: 'catapult.gri.fo/orceria.com.br.php'
             method: 'post'
             type: 'html'
             data: $('form input').serialize(type: 'map')
