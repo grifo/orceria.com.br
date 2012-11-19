@@ -16,15 +16,6 @@
 	$personOrEntity = !empty($_POST['personorentity']) ? $_POST['personorentity'] : null;
 	$suggestions = !empty($_POST['suggestions']) ? $_POST['suggestions'] : null;
 
-	$email = mysql_real_escape_string($email);
-	$name = mysql_real_escape_string($name);
-	$phone = mysql_real_escape_string($phone);
-	$perfil = mysql_real_escape_string($perfil);
-	$field = mysql_real_escape_string($field);
-	$expectations = mysql_real_escape_string($expectations);
-	$personOrEntity = mysql_real_escape_string($personOrEntity);
-	$suggestions = mysql_real_escape_string($suggestions);
-
 	//se o email for vazio faz mais nada
 	if (empty($email))
 		return;
@@ -39,6 +30,15 @@
 	}
 
 	mysql_select_db($database, $con);
+
+	$email = mysql_real_escape_string($email);
+	$name = mysql_real_escape_string($name);
+	$phone = mysql_real_escape_string($phone);
+	$perfil = mysql_real_escape_string($perfil);
+	$field = mysql_real_escape_string($field);
+	$expectations = mysql_real_escape_string($expectations);
+	$personOrEntity = mysql_real_escape_string($personOrEntity);
+	$suggestions = mysql_real_escape_string($suggestions);
 
 	//busca os dados atuais e sobreescreve se estiverem no form
 	$result = mysql_query("SELECT * FROM `$table` WHERE email = '$email'");
@@ -74,6 +74,8 @@
 	}
 
 	mysql_close($con);
+
+	echo "Ok";
 
 
 
