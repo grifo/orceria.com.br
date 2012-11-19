@@ -1,3 +1,3 @@
-# Orçaria
+# Orceria
 
-http://www.orcaria.com.br
+http://www.orceria.com.br

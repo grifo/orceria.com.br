@@ -1,14 +1,11 @@
-
-
-
 class Landing
     constructor: ->
         @form = $ 'form'
         @fields = $ 'form input'
         @email = $ '#signin-email'
+        @stage = 0
 
         this.addEventListener()
-
 
     addEventListener: ->
         $('#send-button').on 'click', (event) =>
@@ -18,18 +15,39 @@ class Landing
     send: ->
         return if not this.validate()
         $.ajax
-            url: 'request-fake.php'
+            url: '../catapult/request-fake.php'
             method: 'post'
+            type: 'html'
             data: $('form input').serialize(type: 'map')
-            success: (resp) ->
-                alert resp.content
+        this.nextStage()
+
+    message: ->
+        $('.message').remove()
+        message = Landing.MESSAGES[@stage]
+        @form.prepend "<div class=\"message\">#{message}</div>"
+        $('body').scrollTop 0
+
+    nextStage: ->
+        return unless @stage < Landing.STAGES.length - 1
+        this.message()
+        @stage++ 
+        @form[0].className = Landing.STAGES[@stage]
 
 
     validate: ->
-        invalid = @email.val().match(/^\s*$/)
-        @email.toggleClass 'invalid', invalid
-        @email[0].focus() if invalid
-        return not invalid
+        valid = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            .test @email.val()
+
+        @email.toggleClass 'invalid', not valid
+        @email[0].focus() unless valid
+        return valid
+
+
+Landing.STAGES = ['first', 'second', 'final']
+Landing.MESSAGES = [
+    'Seu e-mail foi cadastrado com sucesso'
+    'Obrigado por nos ajudar a conhecer você melhor.<br>Enviaremos em breve um e-mail com mais informações.'
+]
 
 
 new Landing

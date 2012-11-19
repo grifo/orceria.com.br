@@ -234,6 +234,8 @@ input[type=text]:focus {
 }
 .signin form {
   width: 400px;
+  overflow: hidden;
+  max-height: 130px;
   margin: 0 auto;
   position: relative;
 }
@@ -261,6 +263,12 @@ input[type=text]:focus {
 .signin input[type=text] {
   width: 400px;
 }
+.signin .message {
+  background: #b3ffb3;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
 .signin form.first .second-section {
   position: absolute;
   left: -9999px;
@@ -282,6 +290,14 @@ input[type=text]:focus {
   right: 0;
   bottom: 0;
 }
+.signin form.second {
+  -webkit-transition: 0.4s all ease-out;
+  -moz-transition: 0.4s all ease-out;
+  -o-transition: 0.4s all ease-out;
+  -ms-transition: 0.4s all ease-out;
+  transition: 0.4s all ease-out;
+  max-height: 1000px;
+}
 .signin form.second .first-section {
   position: absolute;
   left: -9999px;
@@ -296,6 +312,12 @@ input[type=text]:focus {
   float: right;
   margin-top: 10px;
   line-height: 38px;
+}
+.signin form.final .first-section,
+.signin form.final .second-section,
+.signin form.final button {
+  position: absolute;
+  left: -9999px;
 }
 .about {
   padding-top: 30px;
