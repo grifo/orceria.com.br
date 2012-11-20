@@ -10,6 +10,7 @@ task 'dev', ->
 task 'build:scripts', ->
     bundle [
         'source/scripts/ender.js'
+        'source/scripts/simple-cors-request.coffee'
         'source/scripts/main.coffee'
     ], 'public/scripts/main.js'
 
