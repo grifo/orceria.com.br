@@ -49,8 +49,8 @@ class Landing
         valid = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             .test @fieldEmail.val()
 
+        @fieldEmail.toggleClass 'invalid', not valid
         if not valid
-            @fieldEmail.toggleClass 'invalid'
             @fieldEmail[0].focus()
             this.changeStage 0
 
