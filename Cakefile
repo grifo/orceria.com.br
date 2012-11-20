@@ -27,7 +27,6 @@ task 'build', ->
     (require 'ender').build [
         'bonzo'     # DOM utility
         'domready'  # DOM ready
-        'reqwest'   # ajax!
         'bean'      # event manager
     ], output: 'source/scripts/ender', -> 
         invoke 'build:scripts'
