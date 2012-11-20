@@ -68,6 +68,12 @@ Landing.MESSAGES = [
 
 new Landing
 
+#  -. .-. EXTERNAL .-. .-.
+#
+$(document).on 'click', 'a[rel="external"]', (event) ->
+    event.preventDefault()
+    window.open this.href
+
 #  -. .-. GOOGLE ANALYICS .-. .-.
 #
 simpleAsyncLoad
