@@ -22,4 +22,4 @@ window.simpleCORSRequest = (options) ->
         xhr.open options.method, options.url
 
     data = formData options.form
-    xhr.send options.data ? null
+    xhr.send data ? null
