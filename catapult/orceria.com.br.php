@@ -6,6 +6,14 @@
 	$database = "";
 	$table = "";
 
+	//XDomainRequest parse post data
+	if (isset($HTTP_RAW_POST_DATA))
+	{
+		parse_str($HTTP_RAW_POST_DATA, $_POST);
+	}
+
+	var_dump($_POST);
+
 	//busca os dados do form, alguns podem ser nulos
 	$email = $_POST['email'];
 	$name = !empty($_POST['name']) ? $_POST['name'] : null;
@@ -18,7 +26,9 @@
 
 	//se o email for vazio faz mais nada
 	if (empty($email))
+	{
 		return;
+	}
 
 	//inicia a conexão no banco
 	$con = mysql_connect($host, $user, $password);
