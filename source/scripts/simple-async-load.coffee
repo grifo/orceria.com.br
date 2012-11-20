@@ -1,9 +1,15 @@
-window.simpleAsyncLoad = (http, ssl) ->
+window.simpleAsyncLoad = (url, callback) ->
+    url = http: url, ssl: url if typeof url is 'string'
+    tag = document.createElement('script')
+    tag.async = true
+    
+    if callback?
+        tag.onload = callback
+        tag.onreadystatechange = ->
+            console.log tag.readyState, 'opa'
+            callback?() if tag.readyState is 'loaded'
 
-    ssl = ssl ? http
-    tag = $(document.createElement('script'))
-
-    tag.attr 'async', true
-    tag.attr 'src', if 'https:' is document.location.protocol then ssl else http
-
+    tag.src = if 'https:' is document.location.protocol then url.ssl else url.http
     $('script').first().before tag
+
+    
