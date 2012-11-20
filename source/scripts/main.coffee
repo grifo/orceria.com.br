@@ -25,7 +25,7 @@ class Landing
         simpleCORSRequest 
             url: 'http://catapult.gri.fo/orceria.com.br.php'
             method: 'post'
-            form: $('form')
+            form: @form
 
         this.nextStage()
 
