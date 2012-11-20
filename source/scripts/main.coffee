@@ -1,19 +1,26 @@
 class Landing
     constructor: ->
-        @form = $ 'form'
-        @fields = $ 'form input'
-        @email = $ '#signin-email'
+        @form = $('form')
+        @fieldEmail = $('#signin-email')
+        @fieldName = $('#signin-name')
+        @sendButton = $('#send-button')
         @stage = 0
 
         this.addEventListener()
 
     addEventListener: ->
-        $('#send-button').on 'click', (event) =>
+        @sendButton.on 'click', (event) =>
             event.preventDefault()
-            this.send()
+            this.sendAndNext()
 
-    send: ->
-        return if not this.validate()
+        @fieldEmail.on 'focus', (event) =>
+            this.changeStage(0) if @stage isnt 0
+
+        @fieldName.on 'focus', (event) =>
+            this.sendAndNext() if @stage is 0
+
+    sendAndNext: ->
+        return false if not this.validateEmail()
 
         simpleCORSRequest 
             url: 'http://catapult.gri.fo/orceria.com.br.php'
@@ -22,32 +29,37 @@ class Landing
 
         this.nextStage()
 
-    message: ->
-        $('.message').remove()
+    applyMessage: ->
+        $('#message').remove() # Woops! no *find* method :(
         message = Landing.MESSAGES[@stage]
-        @form.prepend "<div class=\"message\">#{message}</div>"
-        $('body').scrollTop 0
+        @form.prepend "<div id=\"message\">#{message}</div>" if message
 
     nextStage: ->
         return unless @stage < Landing.STAGES.length - 1
-        this.message()
-        @stage++ 
+        this.changeStage @stage + 1
+
+    changeStage: (value) ->
+        @stage = value
+        this.applyMessage()
         @form[0].className = Landing.STAGES[@stage]
+        if @stage is 2
+            $('body').scrollTop -200
 
-
-    validate: ->
+    validateEmail: ->
         valid = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            .test @email.val()
+            .test @fieldEmail.val()
 
+        if not valid
+            @fieldEmail.toggleClass 'invalid'
+            @fieldEmail[0].focus()
+            this.changeStage 0
 
-
-        @email.toggleClass 'invalid', not valid
-        @email[0].focus() unless valid
         return valid
 
 
 Landing.STAGES = ['first', 'second', 'final']
 Landing.MESSAGES = [
+    ''
     'Seu e-mail foi cadastrado com sucesso'
     'Obrigado por nos ajudar a conhecer você melhor.<br>Enviaremos em breve um e-mail com mais informações.'
 ]
