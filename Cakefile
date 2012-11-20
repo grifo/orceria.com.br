@@ -11,6 +11,7 @@ task 'build:scripts', ->
     bundle [
         'source/scripts/ender.js'
         'source/scripts/simple-cors-request.coffee'
+        'source/scripts/simple-async-load.coffee'
         'source/scripts/main.coffee'
     ], 'public/scripts/main.js'
 
@@ -25,6 +26,7 @@ task 'build:styles', ->
 task 'build', ->
     # https://github.com/ender-js/Ender/wiki/Ender-package-list
     (require 'ender').build [
+        'qwery'     # Selector
         'bonzo'     # DOM utility
         'domready'  # DOM ready
         'bean'      # event manager
