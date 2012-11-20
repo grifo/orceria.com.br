@@ -86,7 +86,7 @@ simpleAsyncLoad 'http://w.sharethis.com/button/buttons.js', ->
     """).appendTo 'header'
 
     stLight.options
-        publisher: 'ur-b74f1104-f2f-872f-efe6-5d39720ae7a0'
+        publisher: 'ur-5ea22d2-5f60-7b40-65dc-7ebbf9f8773b'
         popup: true
         shorten: false
 
