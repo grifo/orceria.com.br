@@ -1,3 +1,5 @@
+# -. .-. LANDING .-. .-.
+# 
 class Landing
     constructor: ->
         @form = $('form')
@@ -64,5 +66,23 @@ Landing.MESSAGES = [
     'Obrigado por nos ajudar a conhecer você melhor.<br>Enviaremos em breve um e-mail com mais informações.'
 ]
 
-
 new Landing
+
+#  -. .-. GOOGLE ANALYICS .-. .-.
+#
+simpleAsyncLoad 'http://www.google-analytics.com/ga.js', 'https://ssl.google-analytics.com/ga.js'
+
+# -. .-. SHARE THIS .-. .-.
+#
+$.create("""
+    <div class="share wrapper">
+        <span class="st_facebook_vcount share-item" displayText="Facebook"></span>
+        <span class="st_twitter_vcount share-item" displayText="Tweet"></span>
+    </div>
+""").appendTo 'header'
+
+simpleAsyncLoad 'http://w.sharethis.com/button/buttons.js#publisher=ur-b74f1104-f2f-872f-efe6-5d39720ae7a0'
+
+
+
+
