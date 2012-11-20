@@ -20,6 +20,9 @@ window.simpleCORSRequest = (options) ->
     else if XDomainRequest?
         xhr = new XDomainRequest
         xhr.open options.method, options.url
+    else
+        alert 'Ops!\n\nPor favor, atualize seu navegador'
+        return
 
     data = formData options.form
     xhr.send data ? null
