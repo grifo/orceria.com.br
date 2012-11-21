@@ -5,7 +5,7 @@
 	$password = "";
 	$database = "";
 	$table = "";
-	$acceptableDomain = "/^http://(www)?orceria\.com\.br/";
+	$acceptableDomain = "/^http:\/\/(www)?orceria\.com\.br/";
 
 	echo $_SERVER['HTTP_REFERER'];
 
