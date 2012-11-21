@@ -83,14 +83,6 @@ simpleAsyncLoad
 # -. .-. SHARE THIS .-. .-.
 
 simpleAsyncLoad 'http://w.sharethis.com/button/buttons.js', ->
-
-    $.create("""
-        <div class="share wrapper">
-            <span class="st_facebook_vcount share-item" displayText="Facebook"></span>
-            <span st_via="" st_title="Orceria - Uma nova maneira de orçar e realizar seus projetos" class="st_twitter_vcount share-item" displayText="Tweet"></span>
-        </div>
-    """).appendTo 'header'
-
     stLight.options
         publisher: 'ur-5ea22d2-5f60-7b40-65dc-7ebbf9f8773b'
         popup: true

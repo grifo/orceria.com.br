@@ -2,7 +2,7 @@ formData = (form) ->
     return unless form?
 
     form = form[0] unless form.nodeName?
-    data = for field in form.elements when field.checked or field.type is 'text'
+    data = for field in form.elements when field.checked or field.type?.match /^text(area)?$/
         encodeURIComponent(field.name) + '=' + encodeURIComponent(field.value)
 
     if data?
