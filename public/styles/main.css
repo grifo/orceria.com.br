@@ -107,6 +107,8 @@ header .logo{text-indent:101%;white-space:nowrap;overflow:hidden;background-imag
 header .slogan{text-align:center;font-size:1.25em;line-height:90px;width:580px;margin-left:-290px;position:absolute;bottom:-45px;left:50%;-webkit-border-radius:7px;border-radius:7px;background:#fff;-webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.3);box-shadow:1px 1px 2px rgba(0,0,0,0.3)}
 header .share{position:relative;overflow:visible;margin-top:-80px;}
 header .share .share-item{float:right}
+header .share .share-link{display:none}
+.no-js header .share-link{max-width:100px;text-decoration:none;line-height:1;display:block;margin-left:20px}
 section,.wrapper{width:960px;margin:0 auto;overflow:hidden;}
 section h1,.wrapper h1{position:absolute;left:-9999px;top:-100px}
 .title{font-size:2.5em;font-weight:600;color:#f60;letter-spacing:-.075em;text-transform:uppercase;margin-bottom:10px;}
