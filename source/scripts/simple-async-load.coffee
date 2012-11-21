@@ -6,7 +6,6 @@ window.simpleAsyncLoad = (url, callback) ->
     if callback?
         tag.onload = callback
         tag.onreadystatechange = ->
-            console.log tag.readyState, 'opa'
             callback?() if tag.readyState is 'loaded'
 
     tag.src = if 'https:' is document.location.protocol then url.ssl else url.http
