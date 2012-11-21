@@ -5,14 +5,20 @@
 	$password = "";
 	$database = "";
 	$table = "";
+	$acceptableDomain = "/^http://(www)?orceria\.com\.br/";
+
+	echo $_SERVER['HTTP_REFERER'];
+
+	if (!preg_match($acceptableDomain, $_SERVER['HTTP_REFERER']))
+	{
+		die('Falha ao identificar o domínio');
+	}
 
 	//XDomainRequest parse post data
 	if (isset($HTTP_RAW_POST_DATA))
 	{
 		parse_str($HTTP_RAW_POST_DATA, $_POST);
 	}
-
-	var_dump($_POST);
 
 	//busca os dados do form, alguns podem ser nulos
 	$email = $_POST['email'];
@@ -27,7 +33,7 @@
 	//se o email for vazio faz mais nada
 	if (empty($email))
 	{
-		return;
+		die('Email vazio');
 	}
 
 	//inicia a conexão no banco
