@@ -7,7 +7,11 @@
 	$table = "";
 	$acceptableDomain = "/^http:\/\/(www)?orceria\.com\.br/";
 
-	echo $_SERVER['HTTP_REFERER'];
+	//On IE there is no HTTP_REFERER
+	if (empty($_SERVER['HTTP_REFERER']))
+	{
+		$_SERVER['HTTP_REFERER'] = $_SERVER['HTTP_ORIGIN'];
+	}
 
 	if (!preg_match($acceptableDomain, $_SERVER['HTTP_REFERER']))
 	{
