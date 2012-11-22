@@ -33,6 +33,7 @@
 	$expectations = !empty($_POST['expectations']) ? $_POST['expectations'] : null;
 	$personOrEntity = !empty($_POST['personorentity']) ? $_POST['personorentity'] : null;
 	$suggestions = !empty($_POST['suggestions']) ? $_POST['suggestions'] : null;
+	$company = !empty($_POST['company']) ? $_POST['company'] : null;
 
 	//se o email for vazio faz mais nada
 	if (empty($email))
@@ -59,6 +60,7 @@
 	$expectations = mysql_real_escape_string($expectations);
 	$personOrEntity = mysql_real_escape_string($personOrEntity);
 	$suggestions = mysql_real_escape_string($suggestions);
+	$company = mysql_real_escape_string($company);
 
 	//busca os dados atuais e sobreescreve se estiverem no form
 	$result = mysql_query("SELECT * FROM `$table` WHERE email = '$email'");
@@ -74,18 +76,19 @@
 		$expectations = !empty($expectations) ? $expectations : $row['expectations'];
 		$personOrEntity = !empty($personOrEntity) ? $personOrEntity : $row['personorentity'];
 		$suggestions = !empty($suggestions) ? $suggestions : $row['suggestions'];
+		$company = !empty($company) ? $company : $row['company'];
 	}
 
 	if ($jaExiste)
 	{
 		$sql = "UPDATE `$table`
-			SET name = '$name', personorentity = '$personOrEntity', phone = '$phone', perfil = '$perfil', field = '$field', expectations = '$expectations', suggestions = '$suggestions', date = NOW()
+			SET name = '$name', personorentity = '$personOrEntity', phone = '$phone', perfil = '$perfil', field = '$field', expectations = '$expectations', suggestions = '$suggestions', company = '$company', date = NOW()
 			WHERE email = '$email'";	
 	}
 	else
 	{
-		$sql = "INSERT INTO `$table` (email, name, personorentity, phone, perfil, field, expectations, suggestions, date) 
-			VALUES ('$email', '$name', '$personOrEntity', '$phone', '$perfil', '$field', '$expectations', '$suggestions', NOW())";
+		$sql = "INSERT INTO `$table` (email, name, personorentity, phone, perfil, field, expectations, suggestions, company, date) 
+			VALUES ('$email', '$name', '$personOrEntity', '$phone', '$perfil', '$field', '$expectations', '$suggestions', '$company', NOW())";
 	}
 
 	if (!mysql_query($sql, $con))
